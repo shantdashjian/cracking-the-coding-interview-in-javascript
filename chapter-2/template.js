@@ -32,8 +32,8 @@ class Node {
 // Arrange
 const linkedList = new Node(1)
 linkedList.appendToTail(2)
-linkedList.appendToTail(1)
-linkedList.appendToTail(2)
+linkedList.appendToTail(3)
+linkedList.appendToTail(4)
 
 // Act
 
