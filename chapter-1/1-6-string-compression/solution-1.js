@@ -1,4 +1,4 @@
-function stringCompression(string) {
+function compressString(string) {
     let compressed = []
     let count = 0
     for (let i = 0; i < string.length; i++) {
@@ -15,7 +15,7 @@ function stringCompression(string) {
     return compressed
 }
 
-console.log(stringCompression('aabcccccaaa'))
-console.log(stringCompression('abc'))
+console.log(compressString('aabcccccaaa'))
+console.log(compressString('abc'))
 
 // O(n) time | O(n) space

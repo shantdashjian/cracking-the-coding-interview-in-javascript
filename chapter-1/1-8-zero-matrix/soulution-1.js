@@ -1,4 +1,4 @@
-function zeroMatrix(matrix) {
+function convertToZeroMatrix(matrix) {
     let zeroRows = {}
     let zeroCols = {}
     for (let row = 0; row < matrix.length; row++) {
@@ -19,6 +19,6 @@ function zeroMatrix(matrix) {
     return matrix
 }
 
-console.log(zeroMatrix([[0, 1, 2], [1, 0, 2], [5, 1, 2]]))
+console.log(convertToZeroMatrix([[0, 1, 2], [1, 0, 2], [5, 1, 2]]))
 
 // O(m x n) time | O(m + n) space

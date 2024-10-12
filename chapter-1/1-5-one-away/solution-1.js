@@ -1,18 +1,18 @@
-function oneAway(a, b) {
+function isOneAway(a, b) {
     if (Math.abs(a.length - b.length) > 1) {
         return false
     }
     if (a.length === b.length) {
-        return checkOneReplacement(a, b)
+        return isOneReplacementAway(a, b)
     } else {
         if (a.length < b.length) {
-            return checkOneInsert(a, b)
+            return isOneInsertAway(a, b)
         }
-        return checkOneInsert(b, a)
+        return isOneInsertAway(b, a)
     }
 }
 
-function checkOneReplacement(a, b) {
+function isOneReplacementAway(a, b) {
     let foundDiff = false
         for (let i = 0; i < a.length; i++) {
             if (a[i] !== b[i]) {
@@ -25,7 +25,7 @@ function checkOneReplacement(a, b) {
         return true
 }
 
-function checkOneInsert(shorter, longer) {
+function isOneInsertAway(shorter, longer) {
     let longerPointer = 0
     let shorterPointer = 0
     let foundDiff = false
@@ -44,9 +44,9 @@ function checkOneInsert(shorter, longer) {
     return true
 }
 
-console.log(oneAway('pale', 'bale'))
-console.log(oneAway('pale', 'ple'))
-console.log(oneAway('pal', 'pale'))
-console.log(oneAway('pala', 'bake'))
+console.log(isOneAway('pale', 'bale'))
+console.log(isOneAway('pale', 'ple'))
+console.log(isOneAway('pal', 'pale'))
+console.log(isOneAway('pala', 'bake'))
 
 // O(n) time | O(n) space

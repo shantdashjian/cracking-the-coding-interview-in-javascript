@@ -38,7 +38,7 @@ class Node {
     }
 }
 
-function palindrome(head) {
+function isPalindrome(head) {
     const content = []
     while (head !== null) {
         content.push(head.value)
@@ -59,7 +59,7 @@ linkedList.append('b')
 linkedList.append('a')
 
 // Act
-const result = palindrome(linkedList.head)
+const result = isPalindrome(linkedList.head)
 
 // Assert
 console.log(result)

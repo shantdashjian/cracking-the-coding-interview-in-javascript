@@ -1,4 +1,4 @@
-function checkPermutation(a, b) {
+function isPermutation(a, b) {
     if (a.length !== b.length) {
         return false
     }
@@ -7,7 +7,7 @@ function checkPermutation(a, b) {
     return a === b
 } 
 
-console.log(checkPermutation('car', 'rac'))
-console.log(checkPermutation('car', 'rar'))
+console.log(isPermutation('car', 'rac'))
+console.log(isPermutation('car', 'rar'))
 
 // O(n log (n) + m log (m)) time | O(n + m) space

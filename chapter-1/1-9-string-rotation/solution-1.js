@@ -1,4 +1,4 @@
-function stringRotation(s1, s2) {
+function isStringRotation(s1, s2) {
     return isSubstring(s2, s1 + s1)
 }
 
@@ -13,7 +13,7 @@ function isSubstring(s1, s2) {
     return false
 }
 
-console.log(stringRotation('erbottlewat', 'waterbottle'))
-console.log(stringRotation('erbottlewat', 'waterbottls'))
+console.log(isStringRotation('erbottlewat', 'waterbottle'))
+console.log(isStringRotation('erbottlewat', 'waterbottls'))
 
 // O(a x b) time | O(a + b) space

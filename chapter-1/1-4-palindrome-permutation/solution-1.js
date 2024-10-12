@@ -1,4 +1,4 @@
-function palindromePermutation(string) {
+function isPalindromePermutation(string) {
     const map = frequencyMap(string)
     let foundOdd = false
     for (let frequency of Object.values(map)) {
@@ -23,7 +23,7 @@ function frequencyMap(string) {
     return map
 }
 
-console.log(palindromePermutation('Tact Coa'))
-console.log(palindromePermutation('Tact Coaa'))
+console.log(isPalindromePermutation('Tact Coa'))
+console.log(isPalindromePermutation('Tact Coaa'))
 
 // O(n) time | O(1) space
