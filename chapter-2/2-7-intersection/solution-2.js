@@ -58,13 +58,26 @@ class Node {
     }
 }
 
+function getIntersection(list1, list2) {
+    return null
+}
+
 // Arrange
-const linkedList = new LinkedList()
-linkedList.append(7)
-linkedList.append(1)
-linkedList.append(6)
+const linkedList1 = new LinkedList()
+linkedList1.append(7)
+linkedList1.append(1)
+linkedList1.append(6)
+
+const pointer1 = linkedList1.head.next
+
+const linkedList2 = new LinkedList()
+linkedList2.append(1)
+linkedList2.head.next = pointer1
 
 // Act
+const result = getIntersection(linkedList1, linkedList2)
 
 // Assert
-linkedList.print()
+console.log(result)
+
+// O(n + m) time | O(1) space
