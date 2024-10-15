@@ -49,6 +49,16 @@ class LinkedList {
         }
         this.head = p1
     }
+
+    length() {
+        let length = 0
+        let pointer = this.head
+        while (pointer !== null) {
+            pointer = pointer.next
+            length += 1
+        }
+        return length
+    }
 }
 
 class Node {
@@ -59,6 +69,26 @@ class Node {
 }
 
 function getIntersection(list1, list2) {
+    const lengthList1 = list1.length()
+    const lengthList2 = list2.length()
+    let pointer1 = list1.head
+    let pointer2 = list2.head
+    if (lengthList1 > lengthList2) {
+        for (let i = 0; i < lengthList1 - lengthList2; i++) {
+            pointer1 = pointer1.next
+        }
+    } else if (lengthList2 > lengthList1) {
+        for (let i = 0; i < lengthList2 - lengthList1; i++) {
+            pointer2 = pointer2.next
+        }
+    }
+    while (pointer1 !== null) {
+        if (pointer1 === pointer2) {
+            return pointer1
+        }
+        pointer1 = pointer1.next
+        pointer2 = pointer2.next
+    }
     return null
 }
 
