@@ -53,6 +53,20 @@ class LinkedList {
 }
 
 function getNodeAtLoopBeginning(head) {
+    let slowRunner = head
+    let fastRunner = head
+    while (fastRunner !== null && fastRunner.next !== null) {
+        slowRunner = slowRunner.next
+        fastRunner = fastRunner.next.next
+        if (slowRunner === fastRunner) {
+            fastRunner = head
+            while (slowRunner !== fastRunner) {
+                slowRunner = slowRunner.next
+                fastRunner = fastRunner.next
+            }
+            return slowRunner
+        }
+    }
     return null
 }
 
