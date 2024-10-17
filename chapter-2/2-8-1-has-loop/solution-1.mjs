@@ -1,65 +1,7 @@
+import { LinkedList } from '../linked-list.mjs'
+
 // Question: Detect if a linked list has a loop.
 // Note: This is a classic interview problem. I'm solving this first as it is the predecessor to question 2-8: Loop Detection, which asks to return the node where the loop begins.
-
-class LinkedList {
-    constructor() {
-        this.head = null
-        this.tail = null
-    }
-
-    append(value) {
-        const node = new Node(value)
-        if (this.tail === null) {
-            this.head = node
-            this.tail = node
-        } else {
-            this.tail.next = node
-            this.tail = node
-        }
-    }
-
-    print() {
-        let list = ''
-        let pointer = this.head
-        if (pointer === null) {
-            list = 'null'
-        } else {
-            do {
-                list += pointer.value + ' -> '
-                pointer = pointer.next
-            } while (pointer !== null)
-            list += 'null'
-        }
-        console.log(list)
-    }
-
-    reverse() {
-        if (this.head === null || this.head.next === null) {
-            return
-        }
-        this.tail = this.head
-        let p1 = null
-        let p2 = this.head
-        let p3 = p2.next
-        while (true) {
-            p2.next = p1
-            p1 = p2
-            p2 = p3
-            if (p3 === null) {
-                break
-            }
-            p3 = p3.next
-        }
-        this.head = p1
-    }
-}
-
-class Node {
-    constructor(value) {
-        this.value = value
-        this.next = null
-    }
-}
 
 function hasLoop(head) {
     // We use the tortoise and hare method.

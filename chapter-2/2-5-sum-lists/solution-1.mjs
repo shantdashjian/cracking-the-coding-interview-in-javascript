@@ -1,38 +1,4 @@
-class Node {
-    constructor(value) {
-        this.value = value
-        this.next = null
-    }
-
-    appendToTail(value) {
-        const node = new Node(value)
-        let head = this
-        while (head.next !== null) {
-            head = head.next
-        }
-        head.next = node
-    }
-
-    appendToThisTail(value, tail) {
-        const node = new Node(value)
-        tail.next = node
-    }
-
-    print() {
-        let list = ''
-        if (this === null) {
-            list = 'null'
-        } else {
-            let head = this
-            do {
-                list += head.value + ' -> '
-                head = head.next
-            } while (head !== null)
-            list += 'null'
-        }
-        console.log(list)
-    }
-}
+import { Node } from '../linked-list.mjs'
 
 function sumLists(list1, list2) {
     const fistNumber = []
